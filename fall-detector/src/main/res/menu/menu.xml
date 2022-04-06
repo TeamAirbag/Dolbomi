@@ -4,16 +4,16 @@
     <item
         android:id="@+id/about"
         android:icon="@android:drawable/ic_menu_info_details"
-        android:title="@string/about" />
+        android:title="알림" />
 
     <item
         android:id="@+id/signals"
         android:icon="@android:drawable/ic_menu_help"
-        android:title="@string/signals" />
+        android:title="상태" />
 
     <item
         android:id="@+id/settings"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/settings" />
+        android:title="설정" />
 
 </menu>

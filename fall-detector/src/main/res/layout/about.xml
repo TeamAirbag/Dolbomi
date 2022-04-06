@@ -7,7 +7,7 @@
     android:background="@android:color/white"
     android:orientation="vertical"
     android:paddingBottom="?attr/actionBarSize"
-    tools:context="altermarkive.guardian.About">
+    >
 
     <WebView
         android:id="@+id/information"
@@ -21,16 +21,19 @@
         android:layout_weight="1"
         android:gravity="center_horizontal"
         android:padding="20dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+ />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/emergency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="@string/emergency"
+        android:text="응급상황 발생"
+        android:textColor="#ffffff"
+        android:backgroundTint="#58BDBF"
         app:icon="@android:drawable/ic_dialog_alert" />
+
 
 </LinearLayout>
