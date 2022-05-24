@@ -2,22 +2,22 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
-        android:title="Fall Detector Settings"
+        android:title="돌보미 설정"
         app:iconSpaceReserved="false">
         <Preference
             android:name="@string/summary"
             android:key="@string/contact"
-            android:title="@string/title"
+            android:title="비상연락망 등록"
             app:iconSpaceReserved="false">
             <intent android:action="altermarkive.guardian.Contact" />
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory
-        android:title="Data Collection Settings"
+        android:title="데이터 수집 설정"
         app:iconSpaceReserved="false">
         <SwitchPreference
             android:key="@string/collection"
-            android:title="@string/collecting"
+            android:title="응급상황 발생 시 센서 데이터를 공유해야함 (재시작 필요)"
             app:iconSpaceReserved="false" />
     </PreferenceCategory>
 </PreferenceScreen>

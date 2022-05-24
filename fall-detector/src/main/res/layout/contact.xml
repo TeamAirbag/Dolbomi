@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/phone"
+        android:text="비상 연락망"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/phone"
+        android:hint="연락처를 등록하세요"
         android:importantForAutofill="no"
         android:inputType="phone" />
 
@@ -28,7 +28,7 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/search" />
+        android:text="전화번호부 찾기" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -42,7 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/ok" />
+            android:text="확인" />
 
         <Button
             android:id="@+id/cancel"
@@ -50,6 +50,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/cancel" />
+            android:text="취소" />
     </LinearLayout>
 </LinearLayout>
