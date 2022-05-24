@@ -26,8 +26,8 @@ class About : Fragment(), View.OnClickListener {
     ): View? {
         val binding = inflater.inflate(R.layout.about, container, false)
         this.binding = binding
-        val web = binding.findViewById<View>(R.id.information) as WebView
-        web.loadUrl("file:///android_asset/about.html")
+//        val web = binding.findViewById<View>(R.id.information) as WebView
+//        web.loadUrl("file:///android_asset/about.html")
         val emergency = binding.findViewById<View>(R.id.emergency) as Button
         emergency.setOnClickListener(this)
         return binding
