@@ -43,9 +43,9 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_main"
         android:label="@string/app"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_main_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.FallDetector">
         <activity
