@@ -1,7 +1,6 @@
 package altermarkive.guardian
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Build
@@ -9,12 +8,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+
 
 class About : Fragment(), View.OnClickListener {
     private var binding: View? = null
@@ -28,6 +30,10 @@ class About : Fragment(), View.OnClickListener {
         this.binding = binding
         val web = binding.findViewById<View>(R.id.information) as WebView
         web.loadUrl("http://168.131.150.157:8000/video_feed")
+        web.getSettings().setLoadWithOverviewMode(true);
+        web.getSettings().setUseWideViewPort(true);
+        web.setWebViewClient(WebViewClient()) // 새 창 띄우기 않기
+        web.setWebChromeClient(WebChromeClient())
         val emergency = binding.findViewById<View>(R.id.emergency) as Button
         emergency.setOnClickListener(this)
         return binding
