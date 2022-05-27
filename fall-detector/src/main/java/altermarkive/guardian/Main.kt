@@ -1,17 +1,17 @@
 package altermarkive.guardian
 
-import android.app.Dialog
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
-import android.view.View
-import android.view.WindowManager
-import android.webkit.WebView
-import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
@@ -20,12 +20,20 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+
 
 class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
+    val CHANNEL_ID = "testChannel01"   // Channel for notification
+    var notificationManager: NotificationManager? = null
 
+    val database = FirebaseDatabase.getInstance()
+    val myRef = database.getReference()
+
+
+    private var mChild: ChildEventListener? = null
 
 //    private fun eula(context: Context) {
 //        // Run the guardian
@@ -78,7 +86,80 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         navigationView.setNavigationItemSelectedListener(this) //navigation 리스너
 
 //        eula(this)
+
+
+
+        //initDatabase()
+
+
+       // createNotificationChannel(CHANNEL_ID, "testChannel", "this is a test Channel")
+
+
+        myRef.addValueEventListener(object : ValueEventListener {
+            @RequiresApi(Build.VERSION_CODES.O)
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (messageData in dataSnapshot.children) {
+                    Log.d("첫번째 리스너 속 로그임ㅋㅋ", "값"+messageData.value)
+                    if(messageData.value=="fall")
+                        displayNotification()
+                    // child 내에 있는 데이터만큼 반복합니다.
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+
+
     }
+    override fun onStart() {
+        super.onStart()
+
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun displayNotification() {
+        val notificationId = 45
+
+        val notification = Notification.Builder(applicationContext, CHANNEL_ID)
+            .setSmallIcon(R.drawable.dolbomi)
+            .setContentTitle("Example")
+            .setContentText("This is Notification Test")
+            .build()
+
+        notificationManager?.notify(notificationId, notification)
+    }
+
+    fun createNotificationChannel(channelId: String, name: String, channelDescription: String) {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val importance = NotificationManager.IMPORTANCE_DEFAULT // set importance
+            val channel = NotificationChannel(channelId, name, importance).apply {
+                description = channelDescription
+            }
+            // Register the channel with the system
+            notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager?.createNotificationChannel(channel)
+        }
+    }
+
+    fun initDatabase() {
+        mChild = object : ChildEventListener {
+            override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {}
+            @RequiresApi(Build.VERSION_CODES.O)
+            override fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {
+                var s = dataSnapshot.getValue()
+                Log.d("두번째 리스너 속 로그임ㅋㅋ", "값"+s)
+                if(dataSnapshot.getValue()=="fall")
+                    displayNotification()
+            }
+            override fun onChildRemoved(dataSnapshot: DataSnapshot) {}
+            override fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {}
+            override fun onCancelled(databaseError: DatabaseError) {}
+        }
+        myRef.addChildEventListener(mChild as ChildEventListener)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         // 클릭한 툴바 메뉴 아이템 id 마다 다르게 실행하도록 설정
@@ -105,10 +186,6 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         return false
     }
 
-    override fun onStart() {
-        super.onStart()
 
-
-    }
 
 }

@@ -1,6 +1,7 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
+    id 'com.google.gms.google-services'
 }
 
 static def countCommits() {
@@ -52,5 +53,6 @@ dependencies {
     implementation "androidx.preference:preference-ktx:1.1.1"
     implementation "com.google.android.material:material:1.4.0"
     implementation group: 'com.github.ipfs', name: 'java-ipfs-http-client', version: 'v1.3.3'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
 
 }

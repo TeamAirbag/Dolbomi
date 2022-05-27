@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660660375203",
+    "project_id": "airbag-34576",
+    "storage_bucket": "airbag-34576.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660660375203:android:3bbb56dbe48199900af916",
+        "android_client_info": {
+          "package_name": "altermarkive.guardian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660660375203-85tnhc8gee8f2fkfpaudpa2gn4cmcdu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBodZ7Pya0muPS3qKXmQH87WsVc4GT3Qh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660660375203-85tnhc8gee8f2fkfpaudpa2gn4cmcdu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
