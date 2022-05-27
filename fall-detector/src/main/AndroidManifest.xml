@@ -47,7 +47,10 @@
         android:label="@string/app"
         android:roundIcon="@mipmap/ic_main_round"
         android:supportsRtl="false"
-        android:theme="@style/Theme.FallDetector">
+        android:theme="@style/Theme.FallDetector"
+        android:usesCleartextTraffic="true"
+        >
+
         <activity
             android:name=".HomeActivity"
             android:exported="true">

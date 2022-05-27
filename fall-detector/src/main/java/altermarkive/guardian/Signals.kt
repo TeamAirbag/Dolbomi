@@ -22,7 +22,6 @@ class Signals : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.signals, container, false)
         val tabs: TabLayout = view.findViewById(R.id.tabs)
-        val btncamera = view.findViewById<View>(R.id.btncamera) as Button
         activity?.runOnUiThread {
             for (index in Surface.CHARTS.indices) {
                 val tab = tabs.newTab()
@@ -31,14 +30,9 @@ class Signals : Fragment(), View.OnClickListener {
             }
         }
         tabs.addOnTabSelectedListener(view.findViewById(R.id.surface))
-        btncamera.setOnClickListener(this)
 
         return view
     }
     override fun onClick(view: View) {
-        if (R.id.btncamera == view.id) {
-            val intent = Intent(activity, CameraActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

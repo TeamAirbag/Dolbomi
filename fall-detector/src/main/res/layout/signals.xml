@@ -50,11 +50,5 @@
 
     </FrameLayout>
 
-    <Button
-        android:id="@+id/btncamera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="실시간 화면" />
 
 </LinearLayout>

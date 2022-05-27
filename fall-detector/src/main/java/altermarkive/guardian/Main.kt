@@ -87,12 +87,11 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
 //        eula(this)
 
-
+        createNotificationChannel(CHANNEL_ID, "testChannel", "this is a test Channel")
 
         //initDatabase()
 
 
-       // createNotificationChannel(CHANNEL_ID, "testChannel", "this is a test Channel")
 
 
         myRef.addValueEventListener(object : ValueEventListener {
