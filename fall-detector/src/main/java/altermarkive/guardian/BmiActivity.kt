@@ -41,10 +41,12 @@ class BmiActivity:AppCompatActivity() {
                 else -> "저체중"
             }
 
+            val bmi2 = String.format("%.2f", bmi)
+
             val resultValueTextView = findViewById<TextView>(R.id.bmiResultTextView)
             val resultStringTextView = findViewById<TextView>(R.id.resultTextView)
 
-            resultValueTextView.text = bmi.toString()
+            resultValueTextView.text = bmi2.toString()
             resultStringTextView.text = resultText
 
         }
