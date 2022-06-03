@@ -1,10 +1,12 @@
 package altermarkive.guardian
 
 import android.content.Context
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
+import androidx.core.content.ContextCompat.startActivity
 
 class Alarm private constructor(val context: Guardian) {
     private var pool: SoundPool

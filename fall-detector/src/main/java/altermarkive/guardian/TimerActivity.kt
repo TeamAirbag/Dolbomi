@@ -1,5 +1,6 @@
 package altermarkive.guardian
 
+import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.TextView
@@ -16,6 +17,7 @@ class TimerActivity : AppCompatActivity() {
             count--
             if (count < 0) {
                 handler.removeCallbacks(this)
+                finish()
             } else {
                 handler.postDelayed(this, 1000)
             }

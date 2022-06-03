@@ -5,10 +5,13 @@ package altermarkive.guardian
 
 import android.content.Context
 import android.content.Context.SENSOR_SERVICE
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import kotlin.math.sqrt
 
 class Detector private constructor() : SensorEventListener {
@@ -298,6 +301,8 @@ class Detector private constructor() : SensorEventListener {
     }
 
     private fun alert(context: Context) {
+        var intent1 = Intent(context, BmiActivity::class.java)
+        context.startActivity(intent1)
         Alarm.alert(context)
     }
 }
