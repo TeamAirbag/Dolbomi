@@ -3,6 +3,7 @@ package altermarkive.guardian
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -13,6 +14,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.NotificationCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
@@ -123,10 +125,22 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
     fun displayNotification() {
         val notificationId = 45
 
+        val intent = Intent(this, Main::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+
         val notification = Notification.Builder(applicationContext, CHANNEL_ID)
             .setSmallIcon(R.drawable.dolbomi)
-            .setContentTitle("Example")
-            .setContentText("This is Notification Test")
+            .setContentTitle("응급상황 발생")
+            .setTicker("응급상황 발생 ⚠️")
+            .setDefaults(Notification.DEFAULT_VIBRATE)
+            .setContentText("지금 당장 확인하러 가기")
+            .setFullScreenIntent(pendingIntent,true)
+           // .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .setPriority(Notification.PRIORITY_MAX)
+            .setFullScreenIntent(pendingIntent,true)
             .build()
 
         notificationManager?.notify(notificationId, notification)
@@ -136,7 +150,7 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val importance = NotificationManager.IMPORTANCE_DEFAULT // set importance
+            val importance = NotificationManager.IMPORTANCE_HIGH // set importance
             val channel = NotificationChannel(channelId, name, importance).apply {
                 description = channelDescription
             }

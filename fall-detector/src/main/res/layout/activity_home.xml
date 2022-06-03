@@ -9,21 +9,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="120dp"
             android:src="@drawable/dolbomi"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/jua"
             android:text="돌보미"
             android:textColor="#58BDBF"
