@@ -125,6 +125,8 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
     fun displayNotification() {
         val notificationId = 45
 
+        val fullScreenPendingIntent = PendingIntent.getActivity(baseContext, 0,
+            intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val intent = Intent(this, Main::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
@@ -133,14 +135,11 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         val notification = Notification.Builder(applicationContext, CHANNEL_ID)
             .setSmallIcon(R.drawable.dolbomi)
             .setContentTitle("응급상황 발생")
-            .setTicker("응급상황 발생 ⚠️")
-            .setDefaults(Notification.DEFAULT_VIBRATE)
-            .setContentText("지금 당장 확인하러 가기")
-            .setFullScreenIntent(pendingIntent,true)
-           // .setContentIntent(pendingIntent)
+            .setContentText("지금 확인하기")
+            .setFullScreenIntent(fullScreenPendingIntent, true)
+            .setPriority(Notification.PRIORITY_HIGH)
+            .setContentIntent(pendingIntent)
             .setAutoCancel(true)
-            .setPriority(Notification.PRIORITY_MAX)
-            .setFullScreenIntent(pendingIntent,true)
             .build()
 
         notificationManager?.notify(notificationId, notification)
