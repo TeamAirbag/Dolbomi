@@ -12,60 +12,57 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:layout_gravity="center"
-            android:layout_marginTop="125dp"
-            android:src="@drawable/dolbomi"
-            >
-        </ImageView>
+            android:layout_marginTop="120dp"
+            android:src="@drawable/dolbomi"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="20dp"
+            android:fontFamily="@font/jua"
             android:text="돌보미"
             android:textColor="#58BDBF"
-            android:textSize="40dp"
-            android:fontFamily="@font/jua"
-            android:layout_marginTop="10dp">
-        </TextView>
+            android:textSize="45dp"></TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="신속하게 낙상 감지"
-            android:textColor="#58BDAF"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp">
-        </TextView>
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:text="신속하게 낙상 감지"-->
+        <!--            android:textColor="@color/subpoint"-->
+        <!--            android:fontFamily="@font/jua"-->
+        <!--            android:textSize="20dp"-->
+        <!--            android:layout_marginTop="10dp">-->
+        <!--        </TextView>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="똑똑하게 건강 관리"
-            android:textColor="#58BDBF"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp">
-        </TextView>
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:text="똑똑하게 건강 관리"-->
+        <!--            android:textColor="@color/subpoint"-->
+        <!--            android:textSize="18dp"-->
+        <!--            android:fontFamily="@font/jua"-->
+        <!--            android:layout_marginTop="10dp">-->
+        <!--        </TextView>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="\@ TeamAirbag"
-            android:textColor="#58BDBF"
-            android:fontFamily="@font/jua"
-            android:textSize="20dp"
-            android:layout_marginTop="150dp">
-        </TextView>
-
-
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:text="\@TeamAirbag"-->
+        <!--            android:textColor="#58BDBF"-->
+        <!--            android:fontFamily="@font/jua"-->
+        <!--            android:visibility="visible"-->
+        <!--            android:textSize="20dp"-->
+        <!--            android:layout_marginTop="75dp"-->
+        <!--            android:gravity="bottom">-->
+        <!--        </TextView>-->
 
 
     </LinearLayout>

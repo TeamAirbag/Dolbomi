@@ -63,7 +63,7 @@ class Alarm private constructor(val context: Guardian) {
                     TAG,
                     "Alerting the emergency phone number ($contact)"
                 )
-                Messenger.sms(context, Contact[context], "Fall Detected")
+                Messenger.sms(context, Contact[context], "낙상 사고 발생")
                 Telephony.call(context, contact)
             } else {
                 Guardian.say(context, android.util.Log.ERROR, TAG, "ERROR: Emergency phone number not set")

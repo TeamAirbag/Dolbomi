@@ -178,13 +178,10 @@ class Main : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_item1-> Toast.makeText(this,"menu_item1 실행", Toast.LENGTH_SHORT).show()
-            R.id.menu_item2-> Toast.makeText(this,"menu_item2 실행", Toast.LENGTH_SHORT).show()
-            R.id.menu_item3-> {
-                var intent = Intent(this, CameraActivity::class.java)
-                startActivity(intent) }
-            R.id.menu_item4-> {
+            R.id.menu_item2-> {
                 var intent = Intent(this, BmiActivity::class.java)
                 startActivity(intent) }
+            R.id.menu_item3-> Toast.makeText(this,"menu_item3 실행", Toast.LENGTH_SHORT).show()
         }
         return false
     }

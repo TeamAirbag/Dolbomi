@@ -6,4 +6,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="point">#58BDBF</color>
+    <color name="subpoint">#8DDADC</color>
 </resources>
