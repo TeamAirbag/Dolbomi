@@ -17,7 +17,7 @@ class TimerActivity : AppCompatActivity() {
             count--
             if (count < 0) {
                 handler.removeCallbacks(this)
-                finish()
+
             } else {
                 handler.postDelayed(this, 1000)
             }

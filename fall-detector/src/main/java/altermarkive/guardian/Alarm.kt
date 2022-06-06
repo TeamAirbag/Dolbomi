@@ -56,6 +56,11 @@ class Alarm private constructor(val context: Guardian) {
             manager.setStreamVolume(stream, loudest, 0)
         }
 
+//        internal fun alert1(context: Context) {
+//            var intent1 = Intent(context, BmiActivity::class.java)
+//            context.startActivity(intent1)
+//        }
+
         internal fun alert(context: Context) {
             val contact = Contact[context]
             if (contact != null && "" != contact) {

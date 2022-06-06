@@ -7,4 +7,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="point">#58BDBF</color>
     <color name="subpoint">#8DDADC</color>
+    <color name="intro">#c5f5f5</color>
 </resources>

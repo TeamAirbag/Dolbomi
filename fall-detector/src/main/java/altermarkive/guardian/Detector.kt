@@ -301,8 +301,6 @@ class Detector private constructor() : SensorEventListener {
     }
 
     private fun alert(context: Context) {
-        var intent1 = Intent(context, BmiActivity::class.java)
-        context.startActivity(intent1)
         Alarm.alert(context)
     }
 }
